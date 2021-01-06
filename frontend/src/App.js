@@ -10,6 +10,7 @@ import Footer from './components/layout/Footer';
 import ControlPanel from './components/pages/ControlPanel';
 
 import "./style.css";
+import ProjectPage from './components/pages/ProjectPage';
 
 export default function App() {
 
@@ -63,6 +64,10 @@ export default function App() {
             <Route
                 path="/ControlPanel" 
                 component= {ControlPanel}
+            />
+            <Route
+                path="/Project/:id" 
+                component= {ProjectPage}
             />
         </Switch>
         </div>

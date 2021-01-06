@@ -32,11 +32,11 @@ h1,h2,h3,h4,h5,h6,p,ul,ol {
 body{
     font-family: "Roboto", sans-serif;
 }
-
+/* 
 .container{
-    max-width: 900px;
+    max-width: 1850px;
     margin: 0 auto;
-}
+} */
 
 /* header */
 #header{
@@ -207,8 +207,9 @@ body{
 
     .img__wrap {
         position: relative;
-        height:180px;
-        width: 180px;
+        width: 150px;
+        height:150px;
+        
     }
 
   }
@@ -235,31 +236,78 @@ body{
 
 }
 
-.social-email{
-    float: right;
-    width: 30%;
+.social-email .email-form .email-submit{
+    margin-left: 40px;
+    border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+    border-radius: 8px;
+    background-color: rgba(255, 191, 205, 0.72);
+    padding: 8px 20px;
+    color: white;
 }
 
-.email-submit{
-    float:right;
-
+.social-email ::placeholder{
+    padding-left: 50px;
+    color: rgba(255, 191, 205, 0.72);
 }
-.social-bar{margin-bottom: 200px;
+
+.social-email :focus-within{
+    padding-left: 50px;
+    color: white;
+}
+
+.social-email  ::-ms-input-placeholder{
+    margin-left: 20px;
+    color: rgba(255, 191, 205, 0.72);
+}
+
+.social-bar{
+    margin-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
   @media screen and (min-width: 550px){
 
-    
+    .social-bar{
+        text-align: center;
+        justify-content: center;
+    }
 
     .social-icon {
         position: relative;
         height:75px;
         width: 75px;
-        margin-left: 10px;
+        margin-left: 30px;
         border-radius: 30%;
-        float:left
+        float:left;
 
     }
+
+    .social-links{
+        margin-left: 200px;
+    }
+
+    .email-form{
+        padding-top: 18px;
+        justify-content: space-between;
+    }
+
+    .email-input{
+        width: 50%;
+        margin-left: 100px;
+        height: 40px;
+        border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+        border-radius: 8px;
+    }
+
+    .email-input:focus{
+        background-color: rgb(255, 191, 205);
+        border:rgba(224, 201, 206, 0.72) solid 0.1rem;
+
+    }
+
+    
+
 
 }
 
@@ -272,12 +320,35 @@ body{
         position: relative;
         height:120px;
         width: 120px;
+
+        margin-top: 20px;
     }
 
     .social-links{
         text-align: center;
     }
 
+
+    .email-form{
+        padding-top: 18px;
+        justify-content: space-between;
+    }
+
+    .email-input{
+        width: 50%;
+        margin-left: 10px;
+        height: 40px;
+        border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+        border-radius: 8px;
+    }
+
+    .email-input:focus{
+        background-color: rgb(255, 191, 205);
+        border:rgba(224, 201, 206, 0.72) solid 0.1rem;
+
+    }
+
+    
   }
 
 
@@ -286,8 +357,38 @@ body{
       text-align: center;
       background-color: #ff0f7f;
       padding-top: 5px;
-      padding-bottom: 5px;
+      padding-bottom: 20px;
       
   }
 
   
+  /* Project Page Styling */
+
+  @media screen and (min-width: 550px){
+    .project-page-col img{
+        width: 60%;
+        height: auto;
+    }
+    .project-page-col {
+        display: inline-block;
+        width: 50%;
+        margin-top: 20px;
+        
+    }
+    
+    .project-page-row{
+        display: flex;
+        margin: 20px;
+
+    }
+
+    .project-page-content{
+        text-align: center;
+    }
+
+
+  }
+
+  @media screen and (max-width: 549px){
+
+  }
