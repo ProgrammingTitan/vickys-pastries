@@ -8,6 +8,7 @@ import Header from './components/layout/Header';
 import UserContext from './context/UserContext';
 import Footer from './components/layout/Footer';
 import ControlPanel from './components/pages/ControlPanel';
+import BottomNav from './components/layout/BottomNav';
 
 import "./style.css";
 import ProjectPage from './components/pages/ProjectPage';
@@ -71,6 +72,7 @@ export default function App() {
             />
         </Switch>
         </div>
+        <BottomNav />
         <Footer />
         </UserContext.Provider>
         </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SocialBar from '../layout/SocialBar';
 
 const PORT = process.env.PORT || 'http://localhost:5000' ;
 
@@ -54,6 +55,8 @@ export default class ProjectPage extends Component {
                 :
                 <h1>This Project Does Not Exist</h1>
     }
+    <SocialBar />
+
             </>
         )
     }

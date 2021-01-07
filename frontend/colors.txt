@@ -12,3 +12,4 @@ HEX #ffbfcd
 RGB (255,191,205)
 CMYK (0,25,20,0)
 
+hover color : rgb(255, 225, 231);

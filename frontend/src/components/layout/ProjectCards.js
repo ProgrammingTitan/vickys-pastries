@@ -34,8 +34,10 @@ export default class ProjectCards extends Component {
     render() {
         return (
             <>
-                  
+                  <div className="project-card-row">
+                    
                 {this.state.projects.map((item,key) => (
+                    <div className="project-card-col" >
                     <div id={key} className="img__wrap" >
                         {/* <h1 id={key}>{item.title}</h1> */}
                             <a href={`/project/${item._id}`}>
@@ -43,7 +45,10 @@ export default class ProjectCards extends Component {
                             <h2 className="img__description">{item.title}</h2>
                             </a>
                     </div>
+                    </div>
                     ))}
+
+</div>
             </>
                 );
 }

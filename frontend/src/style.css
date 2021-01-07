@@ -7,7 +7,7 @@
 }
 
 a{
-    color:aquamarine;
+    /* color:aquamarine; */
     text-decoration: unset;
 }
 
@@ -41,7 +41,7 @@ body{
 /* header */
 #header{
     height: 50px;
-    background-color:  rgb(78, 140, 255);
+    background-color:  rgb(255,191,205);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,14 +59,14 @@ body{
 }
 
 #header .authOptions button{
-    background-color: rgb(0, 85, 241);
+    background-color: rgb(255,191,205);
     padding: 0 1rem;
     color: #ffffff;
     font-size: 1.1 rem;
 }
 
 #header .authOptions button:hover{
-    background-color:  rgb(46, 114, 240);
+    background-color:  rgb(255, 225, 231);
 }
 
 /* Error Notice */
@@ -182,8 +182,8 @@ body{
 
 
   .img__img{
-    height:100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     
 }
 
@@ -193,9 +193,18 @@ body{
 
     .img__wrap {
         position: relative;
-        height:300px;
-        width: 300px;
 
+    }
+
+    .project-card-col{
+        display: inline-block;
+        width:20%;
+        height:auto;
+    }
+
+    .project-page-row{
+        /* display: flex; */
+        width: 100%;
     }
 
 }
@@ -205,13 +214,22 @@ body{
 
 
 
+    
     .img__wrap {
         position: relative;
-        width: 150px;
-        height:150px;
-        
+
     }
 
+    .project-card-col{
+        display: inline-block;
+        width:100%;
+        height:auto;
+    }
+
+    .project-page-row{
+        /* display: flex; */
+        width: 100%;
+    }
   }
 
   .footer{
@@ -351,18 +369,78 @@ body{
     
   }
 
+/* Bottom Nav Styling */
+.bottom-nav{
+    background-color: rgb(255,191,205);
+    padding: 30px;
+    padding-left: 70px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.bottom-nav li{
+    padding: 4px;
+}
+
+.bottom-nav a:hover{
+    text-decoration: underline;
+}
+
+.bottom-nav-row{
+    width: 100%;
+    
+    
+}
+
+
+
+@media screen and (min-width: 550px){
+.bottom-nav-col{
+    width: 25%;
+    display: inline-block;
+}
+.bottom-nav-logo{
+    width: 20%;
+    height: auto;
+    float: inline-end;
+}
+}
+
+@media screen and (max-width: 549px){
+    .bottom-nav-col{
+        width: 50%;
+        display: inline-block;
+        padding-bottom: 15px;
+    }
+    .bottom-nav-logo{
+        padding-top: 10px;
+        width: 100%;
+        height: auto;
+        float: inline-end;
+    }
+    
+    }
+
 
 /* Footer Styling  */
   .footer{
       text-align: center;
-      background-color: #ff0f7f;
+      background-color: rgb(248, 156, 176);
+      color: white;
       padding-top: 5px;
       padding-bottom: 20px;
+      font-size: 1.5rem;
+      margin-top: 0px;
+      margin-bottom: 0px;
       
   }
 
+  .footer:hover{
+    font-size: 1.6rem;
+  }
+
   
-  /* Project Page Styling */
+/* Project Page Styling */
 
   @media screen and (min-width: 550px){
     .project-page-col img{
@@ -390,5 +468,35 @@ body{
   }
 
   @media screen and (max-width: 549px){
+    .project-page-col img{
+        width: 100%;
+        height: auto;
+    }
+    .project-page-col {
+    
+        width: 100%;
+        padding: 10px;
+        
+    }
+    
+    .project-page-row{
+        /* display: flex; */
+        /* margin: 10px; */
+
+    }
+
+    .project-page-content{
+        text-align: center;
+    }
+
+
 
   }
+
+/* Delete Project Styling */
+#delete-card{
+
+    background: rgba(255, 0, 0, 0.72);
+  }
+
+ 

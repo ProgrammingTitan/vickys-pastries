@@ -39,6 +39,7 @@ export default function ProjectUpload() {
 
     
         setError("Upload Successful!");
+        window.location.reload(false);
         
     
        

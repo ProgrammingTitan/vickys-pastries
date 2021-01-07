@@ -85,6 +85,29 @@ router.get('/:id', async(req,res) =>{
     res.status(500).json({error: err.nessage})
 }
 
+});
+
+
+
+router.delete('/:id', uploadAuth, async (req,res) =>{
+    try{
+        const project = await Project.findByIdAndDelete(
+            req.params.id
+        )
+    
+        if(!project){
+            return res
+            .status(400)
+            .json({
+                msg: 'This Project Does Not Exist.'
+            });
+        }
+    
+        res.json(project); 
+    } catch(err){
+        res.status(500).json({error: err.nessage})
+    }
+    
 })
 
 module.exports = router; 
