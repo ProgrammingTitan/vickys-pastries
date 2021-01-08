@@ -1,7 +1,7 @@
 import React from 'react';
-import ProjectUpload from '../auth/ProjectUpload';
 import ProjectCards from '../layout/ProjectCards';
 import SocialBar from '../layout/SocialBar';
+import AppWidget from '../layout/AboutWidget';
 
 // import React, {useEffect, useContext} from 'react'
 // import {useHistory} from "react-router-dom";
@@ -19,7 +19,8 @@ export default function Home() {
     return (
         <div>
             {/* < ProjectUpload /> */}
-            < ProjectCards />
+            {/* < ProjectCards /> */}
+            <AppWidget />
             <SocialBar />
         </div>
     )

@@ -18,7 +18,7 @@ export default function BottomNav() {
                 <div className="bottom-nav-col">
                 <li><a>Events</a></li>
                 <li><a>Feedback</a></li>
-                <li><a>Employee Site</a></li>
+                <li><a href="/login">Employee Site</a></li>
                 </div>
                 <div className="bottom-nav-col">
                     <a href="/">

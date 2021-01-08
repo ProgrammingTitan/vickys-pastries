@@ -88,6 +88,67 @@ router.get('/:id', async(req,res) =>{
 });
 
 
+router.get('/category/:id', async(req,res) =>{
+
+    try{
+   
+    let idString = req.params.id;
+    let upChat = idString.substring(0,1).toUpperCase();
+    let otherString = upChat + idString.substring(1,idString.length);
+
+    const project = await Project.find({
+        $or:[
+        {type : req.params.id},{type : otherString}
+        ]
+    })
+
+
+    if(!project){
+        return res
+        .status(400)
+        .json({
+            msg: 'This Project Does Not Exist.'
+        });
+    }
+
+    res.json(project); 
+} catch(err){
+    res.status(500).json({error: err.nessage})
+}
+
+});
+
+
+router.get('/search/:id', async(req,res) =>{
+
+    try{
+   
+    let idString = req.params.id;
+    let upChat = idString.substring(0,1).toUpperCase();
+    let otherString = upChat + idString.substring(1,idString.length);
+
+    const project = await Project.find({
+        $or:[
+        {description : req.params.id},{type : otherString}
+        ]
+    })
+
+
+    if(!project){
+        return res
+        .status(400)
+        .json({
+            msg: 'This Project Does Not Exist.'
+        });
+    }
+
+    res.json(project); 
+} catch(err){
+    res.status(500).json({error: err.nessage})
+}
+
+});
+
 
 router.delete('/:id', uploadAuth, async (req,res) =>{
     try{

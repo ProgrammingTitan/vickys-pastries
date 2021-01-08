@@ -41,7 +41,7 @@ export default class ProjectPage extends Component {
             {this.state.gotData ?
                 <div className="project-page-row">
                     <div className="project-page-col">
-                        <img src={this.state.project.imageData} />
+                        <img src={this.state.project.imageData} alt={this.state.project.title}/>
                     </div>
                     <div className="project-page-col">
                         <div className="project-page-content">

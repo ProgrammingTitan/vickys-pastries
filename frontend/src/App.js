@@ -9,9 +9,11 @@ import UserContext from './context/UserContext';
 import Footer from './components/layout/Footer';
 import ControlPanel from './components/pages/ControlPanel';
 import BottomNav from './components/layout/BottomNav';
+import Menu from './components/pages/Menu';
 
 import "./style.css";
 import ProjectPage from './components/pages/ProjectPage';
+import AboutPage from './components/pages/AboutPage';
 
 export default function App() {
 
@@ -69,6 +71,14 @@ export default function App() {
             <Route
                 path="/Project/:id" 
                 component= {ProjectPage}
+            />
+            <Route
+                path="/Menu" 
+                component= {Menu}
+            />
+            <Route
+                path="/About" 
+                component= {AboutPage}
             />
         </Switch>
         </div>
