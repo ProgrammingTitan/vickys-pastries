@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+:root {
+    --primary-color: rgba(57, 117, 125, 0.75);
+    --overlay-color: rgba(255, 255, 255, 0.6);
+    --secondary-color: rgba(255, 191, 205, 1);
+    --menu-speed: 0.75s;
+  }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+font-family: 'Tajawal', sans-serif;
 }
 
 a{
@@ -49,15 +56,16 @@ body{
     padding: 1rem 2rem;
     z-index: 1;
     backdrop-filter: blur(5px);
-    background-color: rgba(255,191,205,0.6);
+    background-color: rgba(255, 255, 255, 0.696);
   }
 
 
   
   .header a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--primary-color);
     font-size: 4rem;
+    font-family: 'Sofia', cursive;
   }
   
   .menu-items {
@@ -73,7 +81,7 @@ body{
   }
   
   .menu-items li a:hover {
-    background-color: #ccc7d3;
+    background-color: #dadada;
   }
 
   @media screen and (min-width: 700px){
@@ -85,6 +93,7 @@ body{
     }
     .header-space{
         padding-top: 7em;
+        background-color: var(--secondary-color);
     }
 
   }
@@ -97,7 +106,8 @@ body{
     .mobile-nav{
     }
     .header-space{
-        padding-top: 5em;
+        padding-top: 3.8em;
+        background-color: var(--secondary-color);
     }
 
   }
@@ -107,18 +117,20 @@ body{
     top: 0;
     right: 0;
     z-index: 1;
-    background-color: rgba(255,191,205,0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
-    height: 5rem;
+    height: 3.8rem;
 
   }
 .mobile-header-title a{
     position: fixed;
     left: 0;
-    padding-top: 0.8rem;
+    padding-top: 0.4rem;
     padding-left: 1.5rem;
+    font-weight: bold;
     font-size: 2.2rem;
-    color:#ffffff
+    color: var(--primary-color);
+    font-family: 'Sofia', cursive;
 }
   
   .menu-wrap .toggler {
@@ -137,10 +149,10 @@ body{
     top: 0;
     right: 0;
     z-index: 1;
-    width: 60px;
+    width: 50px;
     height: 60px;
     padding: 1rem;
-    background: var(--primary-color);
+    /* background: rgba(255, 255, 255, 0.6); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,7 +164,7 @@ body{
     flex: none;
     width: 100%;
     height: 2px;
-    background: #fff;
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,7 +177,7 @@ body{
     content: '';
     position: absolute;
     z-index: 1;
-    top: -10px;
+    top: -6px;
     width: 100%;
     height: 2px;
     background: inherit;
@@ -173,7 +185,7 @@ body{
   
   /* Moves Line Down */
   .menu-wrap .hamburger > div::after {
-    top: 10px;
+    top: 6px;
   }
   
   /* Toggler Animation */
@@ -220,7 +232,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255,191,205,0.6);
+    /* background-color: rgba(255,191,205,0.6); */
     transition: all 0.3s ease;
   }
   
@@ -247,8 +259,10 @@ body{
   
   .menu-wrap .menu > div > div > ul > li {
     list-style: none;
-    color: #fff;
+    color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Sofia', cursive;
     padding: 1rem;
   }
   
@@ -256,6 +270,7 @@ body{
     color: inherit;
     text-decoration: none;
     transition: color 0.4s ease;
+    font-family: 'Sofia', cursive;
   }
   
 
@@ -426,7 +441,7 @@ body{
 
   .footer{
       text-align: center;
-      background-color: #ff0f7f;
+      /* background-color: color: var(--primary-color); */
       padding-top: 5px;
       padding-bottom: 5px;
       
@@ -450,32 +465,40 @@ body{
 
 .social-email .email-form .email-submit{
     margin-left: 40px;
-    border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+    border:var(--primary-color) solid 0.1rem;
     border-radius: 8px;
-    background-color: rgba(255, 191, 205, 0.72);
+    color: var(--primary-color);
     padding: 8px 20px;
-    color: white;
+    color:var(--primary-color);
+    font-weight: bold;
+}
+
+.social-email .email-form .email-submit:hover{
+    color:white;
+    background-color: var(--primary-color);
 }
 
 .social-email ::placeholder{
     padding-left: 50px;
-    color: rgba(255, 191, 205, 0.72);
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .social-email :focus-within{
     padding-left: 50px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .social-email  ::-ms-input-placeholder{
     margin-left: 20px;
-    color: rgba(255, 191, 205, 0.72);
+    color: var(--primary-color);
 }
 
 .social-bar{
     margin-bottom: 100px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background-color: var(--primary-color); */
 }
 
   @media screen and (min-width: 550px){
@@ -494,7 +517,16 @@ body{
         float:left;
 
     }
+    .social-email ::placeholder{
+        font-size: 1.4rem;
+    }
 
+    
+.social-email .email-form .email-submit{
+    height: 80px;
+    width: 200px;
+    font-size: 1.4rem;
+}
     .social-links{
         margin-left: 200px;
     }
@@ -507,14 +539,18 @@ body{
     .email-input{
         width: 50%;
         margin-left: 100px;
-        height: 40px;
-        border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+        height: 80px;
+        border: var(--primary-color) solid 0.1rem;
         border-radius: 8px;
     }
 
     .email-input:focus{
-        background-color: rgb(255, 191, 205);
+        background-color: var(--primary-color);
+        /* background-color: rgb(255, 191, 205); */
         border:rgba(224, 201, 206, 0.72) solid 0.1rem;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
 
     }
 
@@ -540,7 +576,14 @@ body{
         text-align: center;
     }
 
+    .email-input:focus{
+        background-color: var(--primary-color);
+        /* background-color: rgb(255, 191, 205); */
+        border:rgba(224, 201, 206, 0.72) solid 0.1rem;
+        color: white;
+        font-weight: bold;
 
+    }
     .email-form{
         padding-top: 18px;
         justify-content: space-between;
@@ -550,12 +593,12 @@ body{
         width: 50%;
         margin-left: 10px;
         height: 40px;
-        border:rgba(255, 191, 205, 0.72) solid 0.1rem;
+        border: var(--primary-color) solid 0.1rem;
         border-radius: 8px;
     }
 
     .email-input:focus{
-        background-color: rgb(255, 191, 205);
+        /* background-color: rgb(255, 191, 205); */
         border:rgba(224, 201, 206, 0.72) solid 0.1rem;
 
     }
@@ -565,7 +608,7 @@ body{
 
 /* Bottom Nav Styling */
 .bottom-nav{
-    background-color: rgb(255,191,205);
+    background-color: var(--overlay-color);
     padding: 30px;
     padding-left: 70px;
     color: white;
@@ -580,7 +623,9 @@ body{
 .bottom-nav a{
     transition: all 4.4s ease;
     cursor: pointer;
-    color: white;
+    color: var(--primary-color);
+    font-weight: normal;
+
 }
 
 .bottom-nav a:hover{
@@ -605,6 +650,10 @@ body{
     height: auto;
     float: inline-end;
 }
+
+.bottom-nav{
+    margin-left: 80px;
+}
 }
 
 @media screen and (max-width: 549px){
@@ -626,8 +675,9 @@ body{
 /* Footer Styling  */
   .footer{
       text-align: center;
-      background-color: rgb(248, 156, 176);
-      color: white;
+      background-color: var(--overlay-color);
+      color: var(--primary-color);
+      font-weight: bolder;
       padding-top: 5px;
       padding-bottom: 20px;
       font-size: 1.5rem;
@@ -699,12 +749,13 @@ body{
 
 .about-widget{
     /* display: flex; */
-}
+    color: var(--primary-color);
+    }
 
 .about-widget-row{
     /* display: flex; */
     width:100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     
 }
 
@@ -713,7 +764,15 @@ body{
     height: 100%;
 }
 
+.about-widget-button:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
 
+.about-widget-col a{
+    text-decoration: none;
+    color:inherit;
+}
 
 
 
@@ -740,6 +799,12 @@ body{
         font-size: 3.4rem;
     }
     
+    .about-widget-button{
+        font-size: 3rem;
+        border: var(--primary-color) solid 0.1rem;
+        border-radius: 8px;
+        padding: 1rem 3rem;
+    }
 
 }
 
@@ -768,7 +833,12 @@ body{
     .about-widget-col h1{
         font-size: 2.4rem;
     }
-    
+    .about-widget-button{
+        font-size: 2rem;
+        border: var(--primary-color) solid 0.1rem;
+        border-radius: 8px;
+        padding: .5rem 1.5rem;
+    }
 }
 
 /* Delete Project Styling */
@@ -777,4 +847,110 @@ body{
     background: rgba(255, 0, 0, 0.72);
   }
 
+ /* Category Widget Styling */
+
+ @media screen and (max-width: 699px){
+
+    .category-widget-row{
+        width: 100%;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .category-widget-col{
+        width: 100%;
+        
+        position: relative;
+        
+    }
+
+
+    .category-widget-description{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: var(--secondary-color);
+        visibility: visible;
+        opacity: 0.9;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        font-weight: bolder;
+        transition: color .4s ease;
+    }
+
+    .category-widget-description:hover{
+        opacity: 1;
+        color: var(--primary-color)
+    }
+
+    .category-widget-image{
+        width: 100%;
+        height: auto;
+        
+    }
+
+ }
+
+
  
+ @media screen and (min-width: 700px){
+
+    .category-widget-row{
+        height: 40rem;
+        width: 100%;
+        display: flex;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-widget-col{
+        width: 25%;
+        height: 100%;
+        position: relative;
+    }
+
+
+    .category-widget-description{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: var(--secondary-color);
+        visibility: visible;
+        opacity: 0.9;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        font-weight: bolder;
+        transition: color .4s ease;
+    }
+
+    .category-widget-description:hover{
+        opacity: 1;
+        color: var(--primary-color)
+    }
+
+    .category-widget-image{
+        width: 100%;
+        height: 100%;
+        
+    }
+}
+
+/* Divider Styles */
+.divider{
+    margin: auto;
+    height: 1px;
+    width: 95%;
+    background-color: var(--primary-color);
+}

@@ -14,6 +14,9 @@ import Menu from './components/pages/Menu';
 import "./style.css";
 import ProjectPage from './components/pages/ProjectPage';
 import AboutPage from './components/pages/AboutPage';
+import CategoryWidget from './components/layout/CategoryWidget';
+import CategoryPage from './components/pages/CategoryPage';
+import Divider from './components/layout/Divider';
 
 export default function App() {
 
@@ -72,6 +75,11 @@ export default function App() {
                 path="/Project/:id" 
                 component= {ProjectPage}
             />
+             <Route
+                path="/Category/:id" 
+                component= {CategoryPage}
+            />
+            
             <Route
                 path="/Menu" 
                 component= {Menu}
@@ -81,7 +89,9 @@ export default function App() {
                 component= {AboutPage}
             />
         </Switch>
+        
         </div>
+        <Divider />
         <BottomNav />
         <Footer />
         </UserContext.Provider>

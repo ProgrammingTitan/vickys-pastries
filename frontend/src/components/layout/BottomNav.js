@@ -7,12 +7,12 @@ export default function BottomNav() {
                 <ul>
                 <div className="bottom-nav-col">
                 <li><a>Order</a></li>
-                <li><a>Menu</a></li>
-                <li><a>About</a></li>
+                <li><a href="/Menu">Menu</a></li>
+                <li><a href="/About">About</a></li>
                 </div>
                 <div className="bottom-nav-col">
-                <li><a>Holidays</a></li>
-                <li><a>Wedding</a></li>
+                <li><a href="/Category/Holidays">Holidays</a></li>
+                <li><a href="/Category/Wedding">Wedding</a></li>
                 <li><a>Contact</a></li>
                 </div>
                 <div className="bottom-nav-col">

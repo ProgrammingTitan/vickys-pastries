@@ -19,7 +19,7 @@ export default function Header() {
       <ul className="menu-items">
         <li><a href="/Menu" className="menu-item">Menu</a></li>
         <li><a href="/About" className="menu-item">About</a></li>
-        <li><a href="/Holidays" className="menu-item">Holidays</a></li>
+        <li><a href="/Category/Holidays" className="menu-item">Holidays</a></li>
         <li><a href="/Order" className="menu-item">Order</a></li>
       </ul>
       </div>
@@ -38,7 +38,7 @@ export default function Header() {
           <ul>
             <li><a href="/Menu">Menu</a></li>
             <li><a href="/About">About</a></li>
-            <li><a href="/Holidays">Holidays</a></li>
+            <li><a href="/Category/Holidays">Holidays</a></li>
             <li><a href="/Order">Order</a></li>
           </ul>
         </div>

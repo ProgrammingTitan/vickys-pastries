@@ -96,22 +96,68 @@ router.get('/category/:id', async(req,res) =>{
     let upChat = idString.substring(0,1).toUpperCase();
     let otherString = upChat + idString.substring(1,idString.length);
 
-    const project = await Project.find({
-        $or:[
-        {type : req.params.id},{type : otherString}
-        ]
-    })
+    
+    if(idString == 'Holidays')
+    {
+        
+        const project = await Project.find({
+            $or:[
+            {ocassion : 'Easter'},{ocassion : 'Christmas'},{ocassion : 'Thanksgiving'}
+            ,{ocassion : 'Halloween'},{ocassion : '4th of July'}
+            ]
+        })
 
+        if(!project){
+            return res
+            .status(400)
+            .json({
+                msg: 'This Project Does Not Exist.'
+            });
+        }
+    
+        res.json(project); 
+    
+    }
+    else if(idString === 'Special')
+    {
+        const project = await Project.find({
+            $or:[
+            {ocassion : 'Baptism'},{ocassion : 'First Communion'},{ocassion : 'Wedding'}
+            ,{ocassion : 'Any'},{ocassion: 'Baby Shower'},{ocassion: 'Graduation'}
+            ]
+        })
 
-    if(!project){
-        return res
-        .status(400)
-        .json({
-            msg: 'This Project Does Not Exist.'
-        });
+        if(!project){
+            return res
+            .status(400)
+            .json({
+                msg: 'This Project Does Not Exist.'
+            });
+        }
+    
+        res.json(project); 
+    }
+    else
+    {
+        const project = await Project.find({
+            $or:[
+            {ocassion : req.params.id},{ocassion : otherString}
+            ]
+        })
+
+        if(!project){
+            return res
+            .status(400)
+            .json({
+                msg: 'This Project Does Not Exist.'
+            });
+        }
+    
+        res.json(project); 
     }
 
-    res.json(project); 
+
+    
 } catch(err){
     res.status(500).json({error: err.nessage})
 }
