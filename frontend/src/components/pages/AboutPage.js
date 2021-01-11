@@ -6,7 +6,10 @@ export default function AboutPage() {
             <div className="about-widget-row">
                 <div className="about-widget-col">
                 <h1>About the business</h1>
-                <p>lorem30</p>
+                <p>We are a small baking team based out of Long Beach, 
+                    California. Inspired to bake at an early age, Vicky 
+                    Jimenez-Cabrillo pursued her passion and now provides 
+                    celebration and happiness in the form of delicious treats.</p>
                 </div>
                 <div className="about-widget-col">
 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import ControlPanel from '../pages/ControlPanel';
 import ProjectPage from '../pages/ProjectPage';
 
 const PORT = process.env.PORT || 'http://localhost:5000' ;
@@ -87,6 +88,8 @@ export default class ProjectDelete extends Component {
     render() {
         return (
             <>
+            <ControlPanel />
+            <h1 className="control-panel-heading">Delete a Project</h1>
               { this.state.showModal && 
               <div>
                   <h2>Are you sure you want to delete {this.state.projectName}?</h2>

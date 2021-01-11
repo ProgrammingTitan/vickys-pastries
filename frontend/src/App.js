@@ -17,6 +17,9 @@ import AboutPage from './components/pages/AboutPage';
 import CategoryWidget from './components/layout/CategoryWidget';
 import CategoryPage from './components/pages/CategoryPage';
 import Divider from './components/layout/Divider';
+import ProjectUpload from './components/auth/ProjectUpload';
+import ProjectDelete from './components/auth/ProjectDelete';
+import EmailList from './components/auth/EmailList';
 
 export default function App() {
 
@@ -70,6 +73,27 @@ export default function App() {
             <Route
                 path="/ControlPanel" 
                 component= {ControlPanel}
+                exact
+            />
+            <Route
+                path="/ControlPanel/Upload" 
+                component= {ProjectUpload}
+                exact
+            />
+            <Route
+                path="/ControlPanel/Delete" 
+                component= {ProjectDelete}
+                exact
+            />
+            <Route
+                path="/ControlPanel/Email" 
+                component= {EmailList}
+                exact
+            />
+            <Route
+                path="/ControlPanel" 
+                component= {ControlPanel}
+                exact
             />
             <Route
                 path="/Project/:id" 

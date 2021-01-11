@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 import Axios from 'axios';
 import UserContext from '../../context/UserContext';
 import ErrorNotice from '../../misc/ErrorNotice';
+import ControlPanel from '../pages/ControlPanel';
 export default function ProjectUpload() {
 
     const [title, setTitle] = useState();
@@ -53,7 +54,8 @@ export default function ProjectUpload() {
 
     return (
         <div className="page">
-            <h2>Upload New Project</h2>
+            <ControlPanel />
+            <h1 className="control-panel-heading">Upload New Project</h1>
             {error && <ErrorNotice message={error} clearError={ () => setError(undefined)} /> }
             <form className="form" onSubmit={submit}  enctype="multipart/form-data">
                 <label htmlFor="title">Title</label>

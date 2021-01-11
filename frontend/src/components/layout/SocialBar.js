@@ -1,13 +1,34 @@
 import React, { useState, useContext } from 'react';
-
+import Axios from 'axios';
 
 export default function SocialBar() {
 
     const [email, setEmail] = useState();
 
+
     const submit = async (e) => {
-        // Need to send POST request
+        e.preventDefault();
+        
+        try{
+        const newEmail = {
+            email
+        };
+
+        await Axios.post(
+            "http://localhost:5000/emails", newEmail
+        
+        );
+
+    
+        window.location.reload(false);
+        
+    
+       
+    }catch (err) {
+        console.log(err);
     }
+
+    };
 
 
     return (

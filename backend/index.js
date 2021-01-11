@@ -29,6 +29,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION, {
 // Set Routes
 
 app.use("/users", require("./routes/userRouter"));
-
+app.use("/emails", require("./routes/emailRouter"));
 app.use("/projects", require("./routes/projectRouter"));
 app.use('/uploads', express.static('uploads'));
