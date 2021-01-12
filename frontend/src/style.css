@@ -3,6 +3,7 @@
     --primary-color: rgba(57, 117, 125, 0.75);
     --overlay-color: rgba(255, 255, 255, 0.6);
     --secondary-color: rgba(255, 191, 205, 1);
+    --red-color: rgba(255, 0, 0, 0.2);
     --menu-speed: 0.75s;
   }
 
@@ -325,6 +326,7 @@ body{
 
 .form label{
     margin-bottom: 0.2rem;
+    color: var(--primary-color);
 }
 
 .form input[type="text"],
@@ -334,22 +336,43 @@ body{
     padding: 0.3rem;
     font-size: 1.1 rem;
     border: 1px solid #cccccc;
-    background-color: #dfdede;
+    background-color: #ffffff;
     border-radius: 8px;
+}
+
+@media screen and (min-width: 550px){
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="password"]{
+        width: 100%;
+        padding: 1rem;
+        font-size: 2rem;
+
+    }
+    
+.form label{
+    font-size: 2rem;
+}
+
 }
 
 .form input:focus{
     outline:none;
-    border: 1px solid rgb(46, 114, 240);
-    box-shadow: inset 0px 0px 5px rgba(71, 130, 240, 0.5);
+    border: 1px solid var(--secondary-color);
+    box-shadow: inset 0px 0px 5px rgba(255, 109, 199, 0.5);
 }
 
 .form input[type="submit"] {
-    border: 1px solid #7270f0;
-    background-color:#8f8ef1;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
     padding: 0.3rem 0.5rem;
     font-size: 1.1rem;
     border-radius: 8px;
+}
+.form input[type="submit"]:hover{
+    background-color: white;
+    color: var(--secondary-color);
 }
 
 /* Project Card Styles */
@@ -510,8 +533,8 @@ body{
 
     .social-icon {
         position: relative;
-        height:75px;
-        width: 75px;
+        height:175px;
+        width: 175px;
         margin-left: 30px;
         border-radius: 30%;
         float:left;
@@ -693,7 +716,41 @@ body{
   
 /* Project Page Styling */
 
+.project-page-content{
+    color: var(--primary-color)
+}
+
+.project-page-content h3{
+    color: var(--secondary-color);
+}
+
+
+
   @media screen and (min-width: 550px){
+
+    .project-page-content h1{
+        font-size: 3rem;
+    }
+    .project-page-content h3{
+        font-size: 2rem;
+    }
+    .project-page-content p{
+        font-size: 1.8rem;
+    }
+
+    .project-page-content button{
+        border: var(--secondary-color) solid 0.1rem;
+        border-radius: 8px;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        color: var(--secondary-color);
+    }
+
+    .project-page-content button:hover{
+        background-color: var(--secondary-color);
+        color:white;
+    }
+
     .project-page-col img{
         width: 60%;
         height: auto;
@@ -719,6 +776,21 @@ body{
   }
 
   @media screen and (max-width: 549px){
+
+    .project-page-content button{
+        border: var(--secondary-color) solid 0.1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        color: var(--secondary-color);
+    }
+
+    .project-page-content button:hover{
+        background-color: var(--secondary-color);
+        color:white;
+    }
+
     .project-page-col img{
         width: 100%;
         height: auto;
@@ -849,6 +921,24 @@ body{
     background: rgba(255, 0, 0, 0.72);
   }
 
+.delete-commit-option{
+    width: 100%;
+    height: 20rem;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(255, 0, 0, 0.72);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+
+
+.delete-commit-option button:hover{
+    color: white;
+}
+
+
+
  /* Category Widget Styling */
 
  @media screen and (max-width: 699px){
@@ -866,7 +956,17 @@ body{
         
     }
 
+    .delete-commit-option{
+        top: 4rem;
+    }
 
+    .delete-commit-option button{
+        margin: 1rem;
+        font-size: 1.4rem;
+        padding: 1.4rem;
+    }
+
+   
     .category-widget-description{
         position: absolute;
         top: 0;
@@ -902,6 +1002,18 @@ body{
 
  
  @media screen and (min-width: 700px){
+
+    .delete-commit-option{
+        top: 30rem;
+    }
+
+    .delete-commit-option button{
+        margin: 2rem;
+        font-size: 3rem;
+        padding: 2rem;
+    }
+
+    
 
     .category-widget-row{
         height: 40rem;
@@ -1015,4 +1127,93 @@ body{
 .email-list p {
     color: var(--secondary-color);
     font-size: 1.2rem !important;
+}
+
+/* About Page Styling */
+.about-page-row{
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width: 700px){
+    .about-page{
+        margin:6rem;
+        color: var(--primary-color);
+    }
+
+    .about-page-row{
+        display: flex;
+        margin-top: 4rem;
+    }
+    
+    .about-page-col{
+        width: 50%;
+    }
+
+    .about-page-col h1{
+        font-size: 6rem;
+    }
+    
+    .about-page-row-h2{
+        width: 100%;
+        display:inline-block;
+        text-align: center;
+        margin:auto;
+        color: var(--secondary-color);
+    }
+    .about-page-row-h2 h2{
+        font-size: 4.6rem;
+    }
+
+    .about-page-col p {
+        font-size: 2.8rem;
+    }
+    .about-page-col img{
+        width: 35%;
+        height: auto;
+        margin-left: 10rem;
+        border-radius: 10%;
+    }
+}
+
+@media screen and (max-width: 699px){
+    .about-page{
+        margin:0.4rem;
+        color: var(--primary-color);
+    }
+
+    .about-page-row{
+        display: inline-block;
+        margin-top: 0.4rem;
+    }
+    
+    .about-page-col{
+        width: 100%;
+    }
+
+    .about-page-col img{
+        width: 100%;
+        height: auto;
+        /* margin-left: 10rem; */
+        border-radius: 10%;
+    }
+
+    .about-page-col h1{
+        font-size: 2.2rem;
+    }
+    
+    .about-page-row-h2{
+        width: 100%;
+        display:inline-block;
+        text-align: center;
+        margin:auto;
+        color: var(--secondary-color);
+    }
+    .about-page-row-h2 h2{
+        font-size: 3rem;
+    }
+
+    .about-page-col p {
+        font-size: 1.4rem;
+    }
 }

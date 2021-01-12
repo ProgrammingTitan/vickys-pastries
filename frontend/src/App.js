@@ -20,6 +20,8 @@ import Divider from './components/layout/Divider';
 import ProjectUpload from './components/auth/ProjectUpload';
 import ProjectDelete from './components/auth/ProjectDelete';
 import EmailList from './components/auth/EmailList';
+import OrderSubmit from './components/layout/OrderSubmit';
+import OrderList from './components/auth/OrderList';
 
 export default function App() {
 
@@ -91,8 +93,8 @@ export default function App() {
                 exact
             />
             <Route
-                path="/ControlPanel" 
-                component= {ControlPanel}
+                path="/ControlPanel/Order" 
+                component= {OrderList}
                 exact
             />
             <Route
@@ -111,6 +113,10 @@ export default function App() {
             <Route
                 path="/About" 
                 component= {AboutPage}
+            />
+            <Route
+                path="/Order" 
+                component= {OrderSubmit}
             />
         </Switch>
         

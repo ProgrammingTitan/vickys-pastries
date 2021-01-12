@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SocialBar from '../layout/SocialBar';
+import OrderSubmit from '../layout/OrderSubmit';
 
 const PORT = process.env.PORT || 'http://localhost:5000' ;
 
@@ -13,7 +14,10 @@ export default class ProjectPage extends Component {
             project: {},
             projectID:  this.props.match.params.id,
             gotData: false,
+            orderRequest: false,
         }
+
+        this.orderRequestFunction = this.orderRequestFunction.bind(this);
     }
 
 
@@ -33,6 +37,16 @@ export default class ProjectPage extends Component {
         });
     }
 
+    orderRequestFunction = async () =>
+    {
+        this.setState({
+            orderRequest: true
+        });
+
+        console.log(this.state.orderRequest);
+
+    }
+
 
     render() {
        
@@ -46,8 +60,9 @@ export default class ProjectPage extends Component {
                     <div className="project-page-col">
                         <div className="project-page-content">
                             <h1>{this.state.project.title}</h1>
-                            <h3>{this.state.project.type} - ({this.state.project.ocassion})</h3>
+                            <h3>{this.state.project.type} - (Ocassion: {this.state.project.ocassion})</h3>
                             <p>{this.state.project.description}</p>
+                            <button onClick={() => this.orderRequestFunction()}>Order One Like This!</button>
                         </div>
                     </div>
                     
@@ -55,6 +70,12 @@ export default class ProjectPage extends Component {
                 :
                 <h1>This Project Does Not Exist</h1>
     }
+    {this.state.orderRequest && 
+        <OrderSubmit 
+            description={this.state.project.description}
+            ocassion = {this.state.project.ocassion}
+            type = {this.state.project.type}
+        />}
     <SocialBar />
 
             </>

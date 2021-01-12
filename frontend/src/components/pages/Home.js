@@ -5,6 +5,7 @@ import AppWidget from '../layout/AboutWidget';
 import CategoryWidget from '../layout/CategoryWidget';
 import Divider from '../layout/Divider';
 import EmailList from '../auth/EmailList';
+import OrderSubmit from '../layout/OrderSubmit';
 
 // import React, {useEffect, useContext} from 'react'
 // import {useHistory} from "react-router-dom";

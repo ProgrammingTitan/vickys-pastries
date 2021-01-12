@@ -1,25 +1,33 @@
 const router = require("express").Router();
 const uploadAuth = require("../middleware/uploadAuth");
-const Email = require("../models/EmailModel");
+const Order = require("../models/OrderModel");
 
 
 router.post("/", async (req,res) => {
     try{
 
-        let email = req.body.email;
+        let {name, phoneNumber, email, ocassion, description,type, date}= req.body;
 
-        if(!email)
+        if(!name || !phoneNumber || !email || !ocassion || !description || !type || !date)
         {
             return res.status(400).json({msg: "Not all fields entered"});
         }
         
-        const obj = new Email ({
-            email : req.body.email,
+        const obj = new Order ({
+            name,
+            phoneNumber,
+            email,
+            ocassion,
+            description,
+            type,
+            date,
         });
 
-        const savedEmail = await obj.save();
         
-        res.json(savedEmail);
+
+        const savedOrder = await obj.save();
+        
+        res.json(savedOrder);
 
     } catch(err){
         res.status(500).json({error: err.nessage})
@@ -28,8 +36,8 @@ router.post("/", async (req,res) => {
 
 router.get("/", uploadAuth, async (req,res) => {
     try{
-    const emails = await Email.find();
-    res.json(emails);
+    const orders = await Order.find();
+    res.json(orders);
 } catch(err){
     res.status(500).json({error: err.nessage})
 }
@@ -39,12 +47,12 @@ router.get("/", uploadAuth, async (req,res) => {
 
 router.delete('/:id', uploadAuth, async (req,res) =>{
     try{
-        const email = await Email.findByIdAndDelete(
+        const order = await Order.findByIdAndDelete(
             req.params.id
         )
-        console.log(req.params.id)
+
     
-        if(!email){
+        if(!order){
             return res
             .status(400)
             .json({
@@ -52,11 +60,12 @@ router.delete('/:id', uploadAuth, async (req,res) =>{
             });
         }
     
-        res.json(email); 
+        res.json(order); 
     } catch(err){
         res.status(500).json({error: err.nessage})
     }
     
 })
+
 
 module.exports = router; 

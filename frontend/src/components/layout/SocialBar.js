@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
 import Axios from 'axios';
+import ErrorNotice from '../../misc/ErrorNotice';
+const PORT = process.env.PORT || 'http://localhost:5000' ;
 
 export default function SocialBar() {
 
     const [email, setEmail] = useState();
-
+    const [error, setError] = useState();
 
     const submit = async (e) => {
         e.preventDefault();
@@ -15,7 +17,7 @@ export default function SocialBar() {
         };
 
         await Axios.post(
-            "http://localhost:5000/emails", newEmail
+            `${PORT}/emails`, newEmail
         
         );
 
@@ -26,6 +28,7 @@ export default function SocialBar() {
        
     }catch (err) {
         console.log(err);
+        err.response.data.msg && setError(err.response.data.msg);
     }
 
     };
@@ -42,7 +45,9 @@ export default function SocialBar() {
                 </a>
             </div>
             <div className="social-email">
+            {error && <ErrorNotice message={error} clearError={ () => setError(undefined)} /> }
             <form className="email-form" onSubmit={submit}  enctype="multipart/form-data">
+                
                 <input className="email-input" placeHolder="Email" type="text" onChange = {e => setEmail(e.target.value)}/>
                 <input className="email-submit" type = "submit" value="Subscribe" />
                 </form>

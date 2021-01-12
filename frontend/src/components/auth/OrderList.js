@@ -5,21 +5,20 @@ import ControlPanel from '../pages/ControlPanel';
 const PORT = process.env.PORT || 'http://localhost:5000' ;
 
 
-export default class EmailList extends Component {
+export default class OrderList extends Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            emails: [],
+            orders: [],
         }
 
-        this.deleteEmail = this.deleteEmail.bind(this);
-  
+        this.deleteOrder = this.deleteOrder.bind(this);
     }
 
     componentDidMount() {
         let token = localStorage.getItem("auth-token");
-        const url = `${PORT}/emails`;
+        const url = `${PORT}/orders`;
       
         axios.get(url, { 
             headers: {
@@ -27,7 +26,7 @@ export default class EmailList extends Component {
             }})
         .then((res) => {
             this.setState({
-                emails: res.data
+                orders: res.data
             });
         })
         .catch((err) => {
@@ -35,12 +34,13 @@ export default class EmailList extends Component {
         });
     }
 
-    deleteEmail = async (id) => {
+
+    deleteOrder = async (id) => {
         let token = localStorage.getItem("auth-token");
 
         console.log(`${id} will now be deleted`);
 
-        const url = `${PORT}/emails/${id}`;
+        const url = `${PORT}/orders/${id}`;
         
         axios.delete(url ,{ 
             headers: {
@@ -50,7 +50,7 @@ export default class EmailList extends Component {
         )
         .then((res) => {
             this.setState({
-                emails: res.data
+                orders: res.data
             });
         })
         .catch((err) => {
@@ -59,18 +59,22 @@ export default class EmailList extends Component {
 
         window.location.reload(false);
     }
-
+    
     render() {
         return (
             <>
             <ControlPanel />
             <div className="email-list">
-                <h1 className="control-panel-heading">Email List</h1>
-                <h4 className="email-list-heading">Subscribers: </h4>
-                {this.state.emails.map( (item,key) => (
+                <h1 className="control-panel-heading">Order List:</h1>
+                {this.state.orders.map( (item,key) => (
                     <div key={item.key}>
-                        <p>{item.email}</p>
-                        <button onClick={() => {this.deleteEmail(item._id)}}>Delete Email</button>
+                        <h2>{item.name}</h2>
+                        <p>{item.phoneNumber} - {item.email}</p>
+                        <p>Date Needed: {item.date}</p>
+                        <p>Ocassion: {item.ocassion}</p>
+                        <p>Type: {item.type}</p>
+                        <p>"{item.description}"</p>
+                        <button onClick={() => {this.deleteOrder(item._id)}}>Delete Order</button>
                     </div>
                 )
 

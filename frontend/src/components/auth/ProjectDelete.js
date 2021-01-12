@@ -91,7 +91,7 @@ export default class ProjectDelete extends Component {
             <ControlPanel />
             <h1 className="control-panel-heading">Delete a Project</h1>
               { this.state.showModal && 
-              <div>
+              <div className="delete-commit-option">
                   <h2>Are you sure you want to delete {this.state.projectName}?</h2>
               <button onClick={this.deleteFinal}variant="primary" >
         Delete 
